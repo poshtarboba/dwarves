@@ -1,0 +1,52 @@
+<div class="box-user-worlds-info hide">
+	<div class="box-user-worlds hide">
+		<p>Оберіть світ або почніть новий</p>
+		<h3>Збережені світи</h3>
+		<ul class="list-user-worlds"></ul>
+	</div>
+	<p class="text-center" style="padding-top: 60px;">
+		<button class="btn-create-new-world btn-big">Створити новий світ</button>
+	</p>
+</div>
+
+<script>
+(function (){
+	localStorage.setItem('username', game.user.name);
+	$('.main-header .user-name').html(tt('Login') + `: <strong>${game.user.name}</strong>`).data('id', game.user.id);
+	$('.main-header .login-box').removeClass('hide');
+	let $box = $g.children('.box-user-worlds-info');
+	if (game.user.worlds.length) {
+		let html = '';
+		game.user.worlds.forEach(function (world){
+			html += `<li>`;
+			html += `<span title="${world.version}">${world.name}</span>`;
+			html += `<span title="${tt('Created')}: ${world.date_created}">${world.date_saved}</span>`;
+			html += `<span title="${tt('Time in game')}">${getTimeInGame(world.time)}</span>`;
+			html += `<span>${tt('Dwarves')}: ${getWorldDwarvesInfo(world.dwarves)}</span>`;
+			html += `<span><button class="play-this-world" data-id="${world.id}">${tt('Play')}</button></span>`;
+		});
+		$box.find('.list-user-worlds').html(html).find('.play-this-world').on('click', function (){ loadSelectedWorld($(this).data('id')); });
+		$box.find('.box-user-worlds').removeClass('hide');
+		function getWorldDwarvesInfo(dwarves){
+			let arr = dwarves.split('/');
+			let html = `<span title="${tt('Adults')}">${arr[0]}</span> / `;
+			html += `<span title="${tt('Children')}">${arr[1]}</span> / `;
+			html += `<span title="${tt('Dead')}">${arr[2]}</span>`;
+			return html;
+		}
+		function getTimeInGame(n){
+			// TODO: змінити константи на властивості світу (тривалість дня в годинах і години в тіках)
+			const dt = 24;
+			const ht = 10;
+			let d = Math.floor(n / dt);
+			n = n - d * dt;
+			let h = Math.floor(n / ht);
+			return d + ` ${tt('days')} ${h} ${tt('hrs')}`;
+		}
+	}
+	$box.find('.btn-create-new-world').on('click', createNewWorld);
+	$box.removeClass('hide');
+	function createNewWorld(){ alert('Create new world'); }
+	function loadSelectedWorld(id){ alert('Load world ' + id); }
+})();
+</script>

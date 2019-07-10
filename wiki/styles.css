@@ -1,0 +1,50 @@
+html {
+	font-family: sans-serif;
+	color: #bbb;
+	background: #000;
+}
+a {
+	color: #399;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 6px 8px;
+	text-align: left;
+	vertical-align: top;
+	border: 1px solid #333;
+}
+tr:hover > td {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+code {
+	display: block;
+	margin: 8px 0 12px;
+	padding: 8px 12px;
+	font-family: monospace;
+	font-size: 120%;
+	background: rgba(255, 255, 240, 0.15);
+	border: 1px dashed rgba(240, 240, 180, 0.2);
+}
+.code {
+	font-family: monospace;
+	font-size: 120%;
+}
+
+.bug-e > td:first-child { background: rgba(255, 0, 0, 0.3); }
+.bug-w > td:first-child { background: rgba(255, 255, 0, 0.3); }
+.bug-i > td:first-child { background: rgba(0, 0, 255, 0.3); }
+.bug-e > td:first-child:after { content: " e"; }
+.bug-w > td:first-child:after { content: " w"; }
+.bug-i > td:first-child:after { content: " i"; }
+.bug-fixed > td:first-child { background: none; }
+.bug-fixed > td { opacity: 0.4; }

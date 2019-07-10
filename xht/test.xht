@@ -1,0 +1,11 @@
+<div class="test-xht">
+	<span>test</span>
+	<button>alert</button>
+</div>
+<script>
+(function (){
+	let $box = $('.test-xht');
+	$box.find('span').css('color', 'red');
+	$box.find('button').on('click', function (){ alert('hello'); });
+})();
+</script>

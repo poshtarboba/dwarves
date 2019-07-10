@@ -1,0 +1,54 @@
+<head>
+	<meta charset="utf-8">
+	<title>Структура проекту, папка js. Вікі. Dwarves</title>
+	<link type="text/css" rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<p>Повернутися до <a href="index.html">Вікі</a> &gt; <a href="project.html">Структура проекту</a></p>
+	<h1>Структура проекту, папка js</h1>
+	<p>Порядок підключення файлів:</p>
+	<code>
+		dict.js<br>
+		jquery-3.4.1.min.js<br>
+		lib.js<br>
+		fun.js<br>
+		var.js
+	</code>
+	<p>Точка входу знаходиться в кінці файла <span class="code">/index.html</span>, окремі скрипти також знаходяться в модулях</p>
+	<table>
+		<tr>
+			<th>Файл, папка</th>
+			<th>Опис</th>
+		</tr>
+		<tr>
+			<td class="code">/js/dict.js</td>
+			<td>Словник для перекладу гри, використовується лише у скриптах. Для локалізації html-коду потрібно перекласти файли в папці <span class="code">/xht/</span></td>
+		</tr>
+		<tr>
+			<td class="code">/js/fun.js</td>
+			<td>Бібліотека функцій логіки гри (перелік та опис функцій дивись на початку файла)</td>
+		</tr>
+		<tr>
+			<td class="code">/js/jquery-3.4.1.min.js</td>
+			<td>Бібліотека jQuery для спрощення коду</td>
+		</tr>
+		<tr>
+			<td class="code">/js/lib.js</td>
+			<td>Допоміжна бібліотека з функціями рандома, push/pull файлів і т.п.</td>
+		</tr>
+		<tr>
+			<td class="code">/js/var.js</td>
+			<td>Глобальні змінні, константи</td>
+		</tr>
+	</table>
+
+	<!--
+		<tr>
+			<td class="code">/js/</td>
+			<td></td>
+		</tr>
+	-->
+	<!--
+	<p><a href=".html"></a>.</p>
+	-->
+</body>

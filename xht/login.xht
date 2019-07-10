@@ -1,0 +1,29 @@
+<p class="line-login-info">
+	<label>Ваш логін: <input type="text" value="" class="input-user-name"></label>
+	<button class="btn-check-login">ок</button>
+</p>
+<script>
+(function (){
+	let userName = localStorage.getItem('username');
+	let $box = $g.children('.line-login-info');
+	let $input = $box.find('.input-user-name');
+	let $btn = $box.find('.btn-check-login');
+	$btn.on('click', logIn);
+	if (userName) {
+		$input.val(userName);
+		$btn.trigger('click');
+	}
+
+	function logIn(){
+		userName = $box.find('.input-user-name').val();
+		if (!userName.length) return;
+		let url = 'get-user-worlds.php?username=' + userName;
+		pull(url, showUserWorlds);
+	}
+
+	function showUserWorlds(user){
+		game.user = user;
+		xht('user-worlds');
+	}
+})();
+</script>

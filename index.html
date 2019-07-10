@@ -1,0 +1,26 @@
+<head>
+	<meta charset="utf-8">
+	<title>Dwarves</title>
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="main-header">
+		<strong>Дворфи</strong>
+		<small><em>версія 0.0.0</em></small>
+		<span class="login-box pull-right hide">
+			<span class="user-name"></span>
+			<button class="logout btn-small">Вийти</button>
+		</span>
+	</div>
+	<div class="game">
+	</div>
+</body>
+<script src="js/dict.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/lib.js"></script>
+<script src="js/fun.js"></script>
+<script src="js/var.js"></script>
+<script>
+	$('.logout').on('click', function (){ localStorage.removeItem('username'); location.reload(); });
+	xht('login');
+</script>

@@ -1,0 +1,77 @@
+<head>
+	<meta charset="utf-8">
+	<title>Світи користувача. JSON-файли проекту. Вікі. Dwarves</title>
+	<link type="text/css" rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<p>Повернутися до <a href="../index.html">Вікі</a> &gt; <a href="index.html">JSON-файли проекту</a></p>
+	<h1>Світи користувача</h1>
+	<p>Файл:</p>
+	<code>
+		/users/%username%/worlds.json
+	</code>
+	<p>У файлі зберігається об'єкт:</p>
+	<code>
+		{<br>
+		&nbsp;&nbsp;"id": "u0",<br>
+		&nbsp;&nbsp;"name": "boba",<br>
+		&nbsp;&nbsp;"world_new_index": 1,<br>
+		&nbsp;&nbsp;"worlds": []<br>
+		}
+	</code>
+	<p>Властивість <em>id</em> - код користувача, назва його папки.</p>
+	<p>Властивість <em>name</em> - логін користувача.</p>
+	<p>Властивість <em>world_new_index</em> вказує на індекс останнього створенного світу +1.</p>
+	<p>Властивість <em>worlds</em> - масив збережених світів. Кожен світ - об'єкт такої структури:</p>
+	<code>
+		{<br>
+		&nbsp;&nbsp;"id": "w0",<br>
+		&nbsp;&nbsp;"version": "0.0.0",<br>
+		&nbsp;&nbsp;"name": "Мій перший світ",<br>
+		&nbsp;&nbsp;"date_created": "2019-01-04 19:43:37",<br>
+		&nbsp;&nbsp;"date_saved": "2019-01-07 14:17:22",<br>
+		&nbsp;&nbsp;"time": "7568",<br>
+		&nbsp;&nbsp;"dwarves": "4/3/2"<br>
+		}
+	</code>
+	<table>
+		<tr>
+			<th>Параметр</th>
+			<th>Опис</th>
+		</tr>
+		<tr>
+			<td>index</td>
+			<td>Кодова назва світу, назва папки з файлами</td>
+		</tr>
+		<tr>
+			<td>version</td>
+			<td>Версія світу (для конвертації в новіші)</td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>Ім'я світу, що задає користувач</td>
+		</tr>
+		<tr>
+			<td>date_created</td>
+			<td>Дата створення світу</td>
+		</tr>
+		<tr>
+			<td>date_saved</td>
+			<td>Дата останнього збереження світу</td>
+		</tr>
+		<tr>
+			<td>time</td>
+			<td>Загальний ігровий час (в ігрових одиницях часу - тіках, =6 хв.)</td>
+		</tr>
+		<tr>
+			<td>dwarves</td>
+			<td>Кількість дворфів: дорослих / дітей / мертвих</td>
+		</tr>
+		<!--
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+		-->
+	</table>
+</body>

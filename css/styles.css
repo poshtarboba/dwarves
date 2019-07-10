@@ -1,0 +1,53 @@
+html {
+	font-family: sans-serif;
+	color: #bbb;
+	background: #000;
+}
+
+.hide {	display: none; }
+.pull-left { float: left; }
+.pull-right { float: right; }
+.text-center { text-align: center; }
+
+button {
+	cursor: pointer;
+}
+button:hover {
+	opacity: 0.8;
+}
+.btn-big {
+	font-size: 150%;
+	padding: 0.5em 2em;
+}
+.btn-small {
+	font-size: 70%;
+	padding: 0.1em 0.5em
+}
+
+
+
+.main-header {
+	padding-bottom: 8px;
+	border-bottom: 1px solid #333;
+}
+.main-header strong {
+	margin-right: 20px;
+}
+.main-header .logout {
+	margin-left: 12px;
+}
+
+.list-user-worlds {
+	display: table;
+	padding-left: 0;
+}
+.list-user-worlds > li {
+	display: table-row;
+}
+.list-user-worlds > li > span {
+	display: table-cell;
+	padding: 8px 16px;
+}
+.list-user-worlds > li:hover > span {
+	background: rgba(255, 255, 255, 0.2);
+}
